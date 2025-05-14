@@ -3,6 +3,7 @@ import psycopg2
 import cloudinary
 import cloudinary.uploader
 import os
+from urllib.parse import quote as url_quote  # ✅ Added as requested
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)  # Session key
