@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W-YONKO Forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        setInterval(function() {
+            location.reload();  // Auto-reload every 5 seconds
+        }, 5000);
+    </script>
+</head>
+<body>
+    <h1>Welcome to W-YONKO Forum</h1>
+    <h3>Threads</h3>
+    <div id="threads">
+        {% for thread in threads %}
+            <div class="thread">
+                <p><strong>{{ thread[1] }}</strong> - {{ thread[3] }} ({{ thread[4] }})</p>
+                <p>{{ thread[2] }}</p>
+                {% if thread[5] %}
+                    <img src="{{ thread[5] }}" alt="File">
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
